@@ -2,11 +2,11 @@
 // Created by adame on 3/9/2023.
 //
 
+#include "circleList.h"
 #include <iostream>
-#include "linkedList.h"
 
 template <class T>
-struct linkedList<T>::Node {
+struct circleList<T>::Node {
     T value;
     std::shared_ptr<Node> next = nullptr;
 
@@ -14,45 +14,52 @@ struct linkedList<T>::Node {
 };
 
 template <class T>
-void linkedList<T>::insert(T value){
+void circleList<T>::insert(T value){
     std::shared_ptr<Node> temp = std::make_shared<Node>(value);
 
-    if (this->isEmpty()){
-        head = std::move(temp);
+    if (head == nullptr){
+        head = temp;
+        head->next = head;
+    } else if(head->next == head){
+        head->next = temp;
+        temp->next = head;
     } else {
-        temp->next = std::move(head);
-        head = std::move(temp);
+        temp->next = head->next;
+        head->next = temp;
+        head = temp;
     }
 }
 
 template <class T>
-bool linkedList<T>::remove(T key){
-    if (head == nullptr) {
-        return false;
-    }
-
-    if (head->value == key){
-        auto key_node = head.get();
-        head = head->next;
+bool circleList<T>::remove(T key){
+//    if (head->value == key){
+//        auto key_node = head.get();
+//        head = head.next;
 //        delete key_node;
-        return true;
-    }
+//        return true;
+//    }
 
     Node *current = head.get();
-    while(current->next != nullptr){
+    while(current->next != head){
         if(current->next->value == key){
             auto key_node = current->next.get();
-            current->next = std::move(current->next->next);
+            current->next = current->next->next;
 //            delete key_node;
             return true;
         }
         current = current->next.get();
     }
+    if (head->value == key){
+        auto key_node = head.get();
+        current->next = head->next;
+//        delete key_node;
+        return true;
+    }
     return false;
 }
 
 template <class T>
-std::shared_ptr<typename linkedList<T>::Node> linkedList<T>::search(T key){
+std::shared_ptr<typename circleList<T>::Node> circleList<T>::search(T key){
 
     if(head == nullptr){
         throw std::underflow_error("tried searching through empty list");
@@ -67,6 +74,9 @@ std::shared_ptr<typename linkedList<T>::Node> linkedList<T>::search(T key){
     }
 
     while(current->next != nullptr){
+        if(current->next == head){
+            return nullptr;
+        }
         if(current->next->value == key){
             return current->next;
         }
@@ -76,15 +86,15 @@ std::shared_ptr<typename linkedList<T>::Node> linkedList<T>::search(T key){
 }
 
 template <class T>
-bool linkedList<T>::isEmpty(){
+bool circleList<T>::isEmpty(){
     return head == nullptr;
 }
 
 template<typename T>
-linkedList<T>* linkedList<T>::merge(linkedList<T>* list) {
+circleList<T>* circleList<T>::merge(circleList<T>* list) {
     if (head == nullptr) {
         head = list->head;
-        return list;
+        return this;
     }
     if (list->head == nullptr) {
         return this;
@@ -92,29 +102,31 @@ linkedList<T>* linkedList<T>::merge(linkedList<T>* list) {
 
     Node* current = head.get();
 
-    while(current->next != nullptr){
-        current = current->next.get();
-    }
-    current->next = list->head;
+    auto temp_tail = head->next;
+    head->next = list->head->next;
+    list->head->next = temp_tail;
+    head = temp_tail;
 
     return this;
 }
 
 template<typename T>
-void linkedList<T>::print() {
+void circleList<T>::print() {
     if (head == nullptr) {
-        return;
-    }
-    if (head->next == nullptr) {
-        std::cout<< head->value <<std::endl;
         return;
     }
 
     Node* current = head.get();
 
-    while(current->next != nullptr){
+    while(current->next != head){
         std::cout<< current->value << std::endl;
         current = current->next.get();
     }
-    std::cout<< current->value <<std::endl;
 }
+
+template<typename T>
+circleList<T>::~circleList() {
+    delete head;
+}
+
+

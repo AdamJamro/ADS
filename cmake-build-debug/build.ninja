@@ -51,25 +51,31 @@ build cmake_object_order_depends_target_lab1: phony || CMakeFiles/lab1.dir
 
 build CMakeFiles/lab1.dir/main.cpp.obj: CXX_COMPILER__lab1_Debug C$:/Users/adame/CLionProjects/aisd/lab1/main.cpp || cmake_object_order_depends_target_lab1
   DEP_FILE = CMakeFiles\lab1.dir\main.cpp.obj.d
-  FLAGS = -g -std=gnu++14
+  FLAGS = -Wall -Wextra -Wpedantic -g -std=gnu++14
   OBJECT_DIR = CMakeFiles\lab1.dir
   OBJECT_FILE_DIR = CMakeFiles\lab1.dir
 
 build CMakeFiles/lab1.dir/FIFO.cpp.obj: CXX_COMPILER__lab1_Debug C$:/Users/adame/CLionProjects/aisd/lab1/FIFO.cpp || cmake_object_order_depends_target_lab1
   DEP_FILE = CMakeFiles\lab1.dir\FIFO.cpp.obj.d
-  FLAGS = -g -std=gnu++14
+  FLAGS = -Wall -Wextra -Wpedantic -g -std=gnu++14
   OBJECT_DIR = CMakeFiles\lab1.dir
   OBJECT_FILE_DIR = CMakeFiles\lab1.dir
 
 build CMakeFiles/lab1.dir/LIFO.cpp.obj: CXX_COMPILER__lab1_Debug C$:/Users/adame/CLionProjects/aisd/lab1/LIFO.cpp || cmake_object_order_depends_target_lab1
   DEP_FILE = CMakeFiles\lab1.dir\LIFO.cpp.obj.d
-  FLAGS = -g -std=gnu++14
+  FLAGS = -Wall -Wextra -Wpedantic -g -std=gnu++14
   OBJECT_DIR = CMakeFiles\lab1.dir
   OBJECT_FILE_DIR = CMakeFiles\lab1.dir
 
 build CMakeFiles/lab1.dir/linkedList.cpp.obj: CXX_COMPILER__lab1_Debug C$:/Users/adame/CLionProjects/aisd/lab1/linkedList.cpp || cmake_object_order_depends_target_lab1
   DEP_FILE = CMakeFiles\lab1.dir\linkedList.cpp.obj.d
-  FLAGS = -g -std=gnu++14
+  FLAGS = -Wall -Wextra -Wpedantic -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles\lab1.dir
+  OBJECT_FILE_DIR = CMakeFiles\lab1.dir
+
+build CMakeFiles/lab1.dir/circleList.cpp.obj: CXX_COMPILER__lab1_Debug C$:/Users/adame/CLionProjects/aisd/lab1/circleList.cpp || cmake_object_order_depends_target_lab1
+  DEP_FILE = CMakeFiles\lab1.dir\circleList.cpp.obj.d
+  FLAGS = -Wall -Wextra -Wpedantic -g -std=gnu++14
   OBJECT_DIR = CMakeFiles\lab1.dir
   OBJECT_FILE_DIR = CMakeFiles\lab1.dir
 
@@ -81,8 +87,8 @@ build CMakeFiles/lab1.dir/linkedList.cpp.obj: CXX_COMPILER__lab1_Debug C$:/Users
 #############################################
 # Link the executable lab1.exe
 
-build lab1.exe: CXX_EXECUTABLE_LINKER__lab1_Debug CMakeFiles/lab1.dir/main.cpp.obj CMakeFiles/lab1.dir/FIFO.cpp.obj CMakeFiles/lab1.dir/LIFO.cpp.obj CMakeFiles/lab1.dir/linkedList.cpp.obj
-  FLAGS = -g
+build lab1.exe: CXX_EXECUTABLE_LINKER__lab1_Debug CMakeFiles/lab1.dir/main.cpp.obj CMakeFiles/lab1.dir/FIFO.cpp.obj CMakeFiles/lab1.dir/LIFO.cpp.obj CMakeFiles/lab1.dir/linkedList.cpp.obj CMakeFiles/lab1.dir/circleList.cpp.obj
+  FLAGS = -Wall -Wextra -Wpedantic -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\lab1.dir
   POST_BUILD = cd .

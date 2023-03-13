@@ -1,6 +1,8 @@
 # ninja log v5
-6	688	7003896197602203	build.ninja	4d27ea8ac0ab0d68
-856	1100	7000203984498527	lab1.exe	381d3ac10d8cbe80
-29	906	7000190077257128	CMakeFiles/lab1.dir/FIFO.cpp.obj	8e05b532ab9f4a58
-6	855	7000203982118446	CMakeFiles/lab1.dir/main.cpp.obj	7b0f6b57fb2bc6cb
-27	601	7000199022581218	CMakeFiles/lab1.dir/LIFO.cpp.obj	7c527989c5d7c88e
+13	807	7003898124619637	build.ninja	4d27ea8ac0ab0d68
+3327	3840	7003527663359111	lab1.exe	29bc0ae64bb35cf4
+36	947	7000597918982386	CMakeFiles/lab1.dir/FIFO.cpp.obj	98ff4e5a7f651692
+10	3325	7003527658286601	CMakeFiles/lab1.dir/main.cpp.obj	8dbf100c3294f80b
+21	954	7000597918992404	CMakeFiles/lab1.dir/LIFO.cpp.obj	30facf4b452fc020
+34	1343	7003523626823059	CMakeFiles/lab1.dir/linkedList.cpp.obj	d714d11a3f5769ae
+36	1401	7003524927749014	CMakeFiles/lab1.dir/circleList.cpp.obj	3b91ceaa6335fc8
