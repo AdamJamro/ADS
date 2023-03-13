@@ -33,8 +33,8 @@ bool linkedList<T>::remove(T key){
 
     if (head->value == key){
         auto key_node = head.get();
-        head = head.next;
-        delete key_node;
+        head = head->next;
+//        delete key_node;
         return true;
     }
 
@@ -43,7 +43,7 @@ bool linkedList<T>::remove(T key){
         if(current->next->value == key){
             auto key_node = current->next.get();
             current->next = std::move(current->next->next);
-            delete key_node;
+//            delete key_node;
             return true;
         }
         current = current->next.get();

@@ -44,7 +44,7 @@ bool circleList<T>::remove(T key){
         if(current->next->value == key){
             auto key_node = current->next.get();
             current->next = current->next->next;
-            delete key_node;
+//            delete key_node;
             return true;
         }
         current = current->next.get();
@@ -52,7 +52,7 @@ bool circleList<T>::remove(T key){
     if (head->value == key){
         auto key_node = head.get();
         current->next = head->next;
-        delete key_node;
+//        delete key_node;
         return true;
     }
     return false;
