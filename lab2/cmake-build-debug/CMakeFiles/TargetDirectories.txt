@@ -1,0 +1,6 @@
+C:/Users/adame/CLionProjects/aisd/lab2/cmake-build-debug/CMakeFiles/lab2.dir
+C:/Users/adame/CLionProjects/aisd/lab2/cmake-build-debug/CMakeFiles/util_tests.dir
+C:/Users/adame/CLionProjects/aisd/lab2/cmake-build-debug/CMakeFiles/test_order_util.dir
+C:/Users/adame/CLionProjects/aisd/lab2/cmake-build-debug/CMakeFiles/make_array.dir
+C:/Users/adame/CLionProjects/aisd/lab2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/adame/CLionProjects/aisd/lab2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
